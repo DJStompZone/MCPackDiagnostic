@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MCDiagnostics
+namespace MCDiagnostics.Forms
 {
-	public partial class PacksForms : Form
+	public partial class PackValidationState : Form
 	{
-		public PacksForms()
+		public PackValidationState()
 		{
 			InitializeComponent();
 		}

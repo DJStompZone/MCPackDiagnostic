@@ -61,16 +61,25 @@
     <Compile Include="API\Addons\Text.cs" />
     <Compile Include="API\Level\Tag.cs" />
     <Compile Include="Core\Extensions.cs" />
-    <Compile Include="Forms\PacksForms.cs">
+    <Compile Include="Forms\PackInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PacksForms.Designer.cs">
-      <DependentUpon>PacksForms.cs</DependentUpon>
+    <Compile Include="Forms\PackInfo.Designer.cs">
+      <DependentUpon>PackInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PackValidationState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PackValidationState.Designer.cs">
+      <DependentUpon>PackValidationState.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\PacksForms.resx">
-      <DependentUpon>PacksForms.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PackInfo.resx">
+      <DependentUpon>PackInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PackValidationState.resx">
+      <DependentUpon>PackValidationState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
