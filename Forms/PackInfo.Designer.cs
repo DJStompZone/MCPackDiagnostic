@@ -77,6 +77,7 @@ namespace MCDiagnostics.Forms
 			// GeneralContainer
 			// 
 			this.GeneralContainer.Controls.Add(this.tableLayoutPanel1);
+			this.GeneralContainer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.GeneralContainer.Location = new System.Drawing.Point(6, 121);
 			this.GeneralContainer.Name = "GeneralContainer";
 			this.GeneralContainer.Size = new System.Drawing.Size(527, 223);
@@ -128,6 +129,7 @@ namespace MCDiagnostics.Forms
 			// ModulesLabel
 			// 
 			this.ModulesLabel.AutoSize = true;
+			this.ModulesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.ModulesLabel.Location = new System.Drawing.Point(148, 178);
 			this.ModulesLabel.Name = "ModulesLabel";
 			this.ModulesLabel.Size = new System.Drawing.Size(41, 13);
@@ -137,6 +139,7 @@ namespace MCDiagnostics.Forms
 			// DependenciesLabel
 			// 
 			this.DependenciesLabel.AutoSize = true;
+			this.DependenciesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.DependenciesLabel.Location = new System.Drawing.Point(148, 158);
 			this.DependenciesLabel.Name = "DependenciesLabel";
 			this.DependenciesLabel.Size = new System.Drawing.Size(41, 13);
@@ -146,6 +149,7 @@ namespace MCDiagnostics.Forms
 			// VanillaLabel
 			// 
 			this.VanillaLabel.AutoSize = true;
+			this.VanillaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.VanillaLabel.Location = new System.Drawing.Point(148, 138);
 			this.VanillaLabel.Name = "VanillaLabel";
 			this.VanillaLabel.Size = new System.Drawing.Size(41, 13);
@@ -155,6 +159,7 @@ namespace MCDiagnostics.Forms
 			// BaseGameVersionLabel
 			// 
 			this.BaseGameVersionLabel.AutoSize = true;
+			this.BaseGameVersionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.BaseGameVersionLabel.Location = new System.Drawing.Point(148, 118);
 			this.BaseGameVersionLabel.Name = "BaseGameVersionLabel";
 			this.BaseGameVersionLabel.Size = new System.Drawing.Size(41, 13);
@@ -164,6 +169,7 @@ namespace MCDiagnostics.Forms
 			// MinEngineVersionLabel
 			// 
 			this.MinEngineVersionLabel.AutoSize = true;
+			this.MinEngineVersionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.MinEngineVersionLabel.Location = new System.Drawing.Point(148, 98);
 			this.MinEngineVersionLabel.Name = "MinEngineVersionLabel";
 			this.MinEngineVersionLabel.Size = new System.Drawing.Size(41, 13);
@@ -173,6 +179,7 @@ namespace MCDiagnostics.Forms
 			// VersionLabel
 			// 
 			this.VersionLabel.AutoSize = true;
+			this.VersionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.VersionLabel.Location = new System.Drawing.Point(148, 78);
 			this.VersionLabel.Name = "VersionLabel";
 			this.VersionLabel.Size = new System.Drawing.Size(41, 13);
@@ -182,6 +189,7 @@ namespace MCDiagnostics.Forms
 			// LockTemplateOptionsLabel
 			// 
 			this.LockTemplateOptionsLabel.AutoSize = true;
+			this.LockTemplateOptionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.LockTemplateOptionsLabel.Location = new System.Drawing.Point(148, 58);
 			this.LockTemplateOptionsLabel.Name = "LockTemplateOptionsLabel";
 			this.LockTemplateOptionsLabel.Size = new System.Drawing.Size(41, 13);
@@ -191,6 +199,7 @@ namespace MCDiagnostics.Forms
 			// UUIDLabel
 			// 
 			this.UUIDLabel.AutoSize = true;
+			this.UUIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.UUIDLabel.Location = new System.Drawing.Point(148, 38);
 			this.UUIDLabel.Name = "UUIDLabel";
 			this.UUIDLabel.Size = new System.Drawing.Size(41, 13);
@@ -200,6 +209,7 @@ namespace MCDiagnostics.Forms
 			// FormatVersionLabel
 			// 
 			this.FormatVersionLabel.AutoSize = true;
+			this.FormatVersionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormatVersionLabel.Location = new System.Drawing.Point(148, 19);
 			this.FormatVersionLabel.Name = "FormatVersionLabel";
 			this.FormatVersionLabel.Size = new System.Drawing.Size(41, 13);
@@ -209,96 +219,107 @@ namespace MCDiagnostics.Forms
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(3, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(55, 13);
+			this.label1.Size = new System.Drawing.Size(64, 13);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Pack type";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(3, 19);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(76, 13);
+			this.label2.Size = new System.Drawing.Size(90, 13);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Format version";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.Location = new System.Drawing.Point(3, 38);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(34, 13);
+			this.label3.Size = new System.Drawing.Size(38, 13);
 			this.label3.TabIndex = 2;
 			this.label3.Text = "UUID";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(3, 58);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(111, 13);
+			this.label4.Size = new System.Drawing.Size(132, 13);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Lock template options";
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(3, 78);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(42, 13);
+			this.label5.Size = new System.Drawing.Size(49, 13);
 			this.label5.TabIndex = 4;
 			this.label5.Text = "Version";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(3, 98);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(120, 13);
+			this.label6.Size = new System.Drawing.Size(101, 20);
 			this.label6.TabIndex = 5;
 			this.label6.Text = "Minimum engine version";
 			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(3, 118);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(97, 13);
+			this.label7.Size = new System.Drawing.Size(114, 13);
 			this.label7.TabIndex = 6;
 			this.label7.Text = "Base game version";
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.Location = new System.Drawing.Point(3, 138);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(38, 13);
+			this.label8.Size = new System.Drawing.Size(45, 13);
 			this.label8.TabIndex = 7;
 			this.label8.Text = "Vanilla";
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.Location = new System.Drawing.Point(3, 158);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(76, 13);
+			this.label9.Size = new System.Drawing.Size(88, 13);
 			this.label9.TabIndex = 8;
 			this.label9.Text = "Dependencies";
 			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label10.Location = new System.Drawing.Point(3, 178);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(47, 13);
+			this.label10.Size = new System.Drawing.Size(54, 13);
 			this.label10.TabIndex = 9;
 			this.label10.Text = "Modules";
 			// 
 			// PackTypeLabel
 			// 
 			this.PackTypeLabel.AutoSize = true;
+			this.PackTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.PackTypeLabel.Location = new System.Drawing.Point(148, 0);
 			this.PackTypeLabel.Name = "PackTypeLabel";
 			this.PackTypeLabel.Size = new System.Drawing.Size(41, 13);
