@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MCDiagnostics.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace MCDiagnostics
@@ -13,7 +14,7 @@ namespace MCDiagnostics
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new PacksForms());
+			Application.Run(new PackInfo());
 		}
 	}
 }
