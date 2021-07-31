@@ -32,6 +32,17 @@ namespace MCDiagnostics.Forms
 			Manifest manifest = new Manifest();
 
 			PackContainer.Text = manifest.Header.Name;
+			PackTypeLabel.Text = manifest.Modules[0].Type;
+			FormatVersionLabel.Text = manifest.FormatVersion;
+			UUIDLabel.Text = manifest.PackHeader.Uuid;
+			LockTemplateOptionsLabel.Text = manifest.LockTemplateOptions;
+			VersionLabel.Text = manifest.PackHeader.Version;
+			MinimumEngineVersionLabel.Text = manifest.PackHeader.MinEngineVersion;
+			BaseGameVersionLabel.Text = manifest.BaseGameVersion;
+			VanillaLabel.Text = manifest.Vanilla;
+			DependenciesLabel.Text = manifest.Dependencies;
+			ModulesLabel.Text = manifest.Modules;
+
 			// Load there the other labels
 		}
 	}
