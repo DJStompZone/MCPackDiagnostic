@@ -1,0 +1,206 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "minecraft.manifest.json",
+  "type": "object",
+  "additionalProperties": true,
+  "definitions": {
+    "uuid": {
+      "type": "string",
+      "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+      "default": "00000000-0000-0000-0000-000000000000"
+    },
+    "version": {
+      "type": "array",
+      "maxItems": 3,
+      "minItems": 3,
+      "items": {
+        "type": "integer",
+        "default": 0,
+        "examples": [
+          16,
+          0,
+          0
+        ]
+      }
+    },
+    "min_engine_version": {
+      "type": "array",
+      "maxItems": 3,
+      "minItems": 3,
+      "items": {
+        "type": "integer",
+        "default": 0,
+        "examples": [
+          1,
+          13,
+          0
+        ]
+      }
+    }
+  },
+  "properties": {
+    "format_version": {
+      "$id": "/properties/format_version",
+      "type": "integer",
+      "title": "Minecraft Bedrock Manifest Format",
+      "default": 1
+    },
+    "header": {
+      "$id": "/properties/header",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "description": {
+          "$id": "/properties/header/properties/description",
+          "type": "string",
+          "title": "Pack description",
+          "default": ""
+        },
+        "name": {
+          "$id": "/properties/header/properties/name",
+          "type": "string",
+          "title": "Pack name",
+          "default": ""
+        },
+        "uuid": {
+          "$id": "/properties/header/properties/uuid",
+          "$ref": "#/definitions/uuid",
+          "title": "Pack UUID"
+        },
+        "platform_locked": {
+          "$id": "/properties/header/properties/platform_locked",
+          "$type": "bool",
+          "title": "Is pack platform locked (Can be only used on one platform)",
+          "default": false
+        },
+        "version": {
+          "$id": "/properties/header/properties/version",
+          "$ref": "#/definitions/version",
+          "title": "Pack Version"
+        },
+        "min_engine_version": {
+          "$id": "/properties/header/properties/min_engine_version",
+          "$ref": "#/definitions/min_engine_version",
+          "title": "Minimum Engine Version"
+        }
+      },
+      "required": [
+        "version",
+        "uuid",
+        "name"
+      ]
+    },
+    "modules": {
+      "$id": "/properties/modules",
+      "type": "array",
+      "items": {
+        "$id": "/properties/modules/items",
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "$id": "/properties/modules/items/properties/description",
+            "type": "string",
+            "title": "Minecraft Bedrock Pack Description",
+            "default": "Example pack description"
+          },
+          "type": {
+            "$id": "/properties/modules/items/properties/type",
+            "type": "string",
+            "title": "Pack type",
+            "enum": [
+              "resources",
+              "data",
+              "skin_pack"
+            ]
+          },
+          "uuid": {
+            "$id": "/properties/modules/items/properties/uuid",
+            "$ref": "#/definitions/uuid"
+          },
+          "version": {
+            "$id": "/properties/modules/items/properties/version",
+            "$ref": "#/definitions/version"
+          }
+        },
+        "required": [
+          "version",
+          "uuid",
+          "type"
+        ]
+      }
+    },
+    "subpacks": {
+      "$id": "/properties/subpacks",
+      "type": ["array", "null"],
+      "items": {
+        "$id": "/properties/subpacks/items",
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "folder_name": {
+            "$id": "/properties/subpacks/items/properties/folder_name",
+            "type": "string",
+            "title": "Subpack Folder Name",
+            "description": "Located in /subpacks/NAME_HERE/",
+            "default": "",
+            "examples": [
+              "ExampleSubpack"
+            ]
+          },
+          "name": {
+            "$id": "/properties/subpacks/items/properties/name",
+            "type": "string",
+            "title": "Subpack Name",
+            "default": "Low-memory version"
+          },
+          "memory_tier": {
+            "$id": "/properties/subpacks/items/properties/memory_tier",
+            "type": "integer",
+            "title": "Subpack\tMemory Tier",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        },
+        "required": [
+          "folder_name",
+          "name",
+          "memory_tier"
+        ]
+      }
+    },
+    "dependencies": {
+      "$id": "/properties/dependencies",
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "uuid": {
+            "$id": "/properties/dependencies/uuid",
+            "$ref": "#/definitions/uuid",
+            "title": "Dependency UUID",
+            "description": "The ID of a related module that must also be loaded with this pack"
+          },
+          "version": {
+            "$id": "/properties/dependencies/version",
+            "$ref": "#/definitions/version",
+            "title": "Minimum Dependency Version",
+            "description": "The minimum version of the dependency"
+          }
+        },
+        "required": [
+          "uuid",
+          "version"
+        ]
+      }
+    }
+  },
+  "required": [
+    "format_version",
+    "header",
+    "modules"
+  ]
+}
