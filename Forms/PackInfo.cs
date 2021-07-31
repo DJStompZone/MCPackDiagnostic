@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
+using System.Drawing;
 
 namespace MCDiagnostics.Forms
 {
@@ -29,23 +30,21 @@ namespace MCDiagnostics.Forms
 					{
 						using (ZipArchive archive = new ZipArchive(archiveStream))
 						{
-							foreach (ZipArchiveEntry entry in archive.Entries)
+							// Fetch manifest and fill infos
+							ZipArchiveEntry entry = GetFileEntryFromName(archive, "manifest.json");
+							if (entry != null)
 							{
-								if (!entry.FullName.EndsWith("/"))
+								using (StreamReader reader = new StreamReader(entry.Open()))
 								{
-									if (entry.FullName.Contains("manifest.json")) // Load manifest
+									Manifest manifest = Manifest.DeserializeManifest(reader.ReadToEnd());
+									if (manifest != null)
 									{
-										using (StreamReader reader = new StreamReader(entry.Open()))
-										{
-											Manifest manifest = Manifest.DeserializeManifest(reader.ReadToEnd());
-											if (manifest != null)
-											{
-												LoadPackFromManifest(manifest);
-											}
-										}
+										LoadPackFromManifest(manifest);
 									}
 								}
 							}
+
+							// Fetch pack icon
 						}
 					}
 				}
@@ -56,6 +55,26 @@ namespace MCDiagnostics.Forms
 			}
 		}
 
+		private ZipArchiveEntry GetFileEntryFromName(ZipArchive source, string name)
+		{
+			foreach (ZipArchiveEntry entry in source.Entries)
+			{
+				if (!entry.FullName.EndsWith("/"))
+				{
+					if (entry.FullName.Contains(name)) // Load manifest
+					{
+						return entry;
+					}
+				}
+			}
+			return null;
+		}
+
+		private Image GetImageFromStream()
+		{
+			throw new NotImplementedException();
+		}
+
 		private void LoadPackFromManifest(Manifest manifest)
 		{
 			if (manifest != null)
@@ -63,8 +82,72 @@ namespace MCDiagnostics.Forms
 				// Set pack description
 				PackDescriptionLabel.Text = manifest.Header.Description;
 
-			PackContainer.Text = manifest.Header.Name;
-			// Load there the other labels
+				// Show pack type
+				PackContainer.Text = manifest.Header.Name;
+
+				PackTypeLabel.Text = manifest.Modules[0].Type;
+
+				// Show pack manifest format version
+				if (manifest.FormatVersion != null)
+				{
+					FormatVersionLabel.Text = manifest.FormatVersion.ToString();
+				}
+				else
+				{
+					FormatVersionLabel.Text = "0";
+				}
+
+				// Show pack UUID
+				if (string.IsNullOrWhiteSpace(manifest.Header.Uuid))
+				{
+					UUIDLabel.Text = "00000000-0000-0000-0000-000000000000"; // Default empty ID
+				}
+				else
+				{
+					UUIDLabel.Text = manifest.Header.Uuid; // Pack manifest ID
+				}
+
+				// Show pack lock template options
+				if (manifest.Header.LockTemplateOptions == true)
+				{
+					LockTemplateOptionsLabel.Text = "Yes";
+				}
+				else
+				{
+					LockTemplateOptionsLabel.Text = "No";
+				}
+
+				// Show pack version
+				VersionLabel.Text = string.Join(".", manifest.Header.Version);
+
+				// Show minimum engine version
+				MinEngineVersionLabel.Text = string.Join(".", manifest.Header.MinEngineVersion);
+
+				// Show base game version
+				BaseGameVersionLabel.Text = string.Join(".", manifest.Header.BaseGameVersion);
+
+				// Show game vanilla version
+				VanillaLabel.Text = string.Join(".", manifest.Header.Vanilla);
+
+				// Show dependencies
+				if (manifest.Dependencies != null && manifest.Dependencies.Count > 0)
+				{
+					DependenciesLabel.Text = manifest.Dependencies.Count.ToString();
+				}
+				else
+				{
+					DependenciesLabel.Text = "No";
+				}
+
+				if (manifest.Modules != null && manifest.Modules.Count > 0)
+				{
+					ModulesLabel.Text = manifest.Modules.Count.ToString();
+				}
+				else
+				{
+					ModulesLabel.Text = "No";
+				}
+			}
 		}
 	}
 }

@@ -54,19 +54,19 @@ namespace MCDiagnostics.Forms
 			this.PackTypeLabel = new System.Windows.Forms.Label();
 			this.PackContainer = new System.Windows.Forms.GroupBox();
 			this.PackDescriptionLabel = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.PackIcon = new System.Windows.Forms.PictureBox();
 			this.groupBox1.SuspendLayout();
 			this.GeneralContainer.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.PackContainer.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.PackIcon)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.GeneralContainer);
 			this.groupBox1.Controls.Add(this.PackContainer);
-			this.groupBox1.Controls.Add(this.pictureBox1);
+			this.groupBox1.Controls.Add(this.PackIcon);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(539, 581);
@@ -324,13 +324,13 @@ namespace MCDiagnostics.Forms
 			this.PackDescriptionLabel.TabIndex = 2;
 			this.PackDescriptionLabel.Text = "Pack description";
 			// 
-			// pictureBox1
+			// PackIcon
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(100, 96);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.PackIcon.Location = new System.Drawing.Point(6, 19);
+			this.PackIcon.Name = "PackIcon";
+			this.PackIcon.Size = new System.Drawing.Size(100, 96);
+			this.PackIcon.TabIndex = 0;
+			this.PackIcon.TabStop = false;
 			// 
 			// PackInfo
 			// 
@@ -347,7 +347,7 @@ namespace MCDiagnostics.Forms
 			this.tableLayoutPanel1.PerformLayout();
 			this.PackContainer.ResumeLayout(false);
 			this.PackContainer.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.PackIcon)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -357,7 +357,7 @@ namespace MCDiagnostics.Forms
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox PackContainer;
 		private System.Windows.Forms.Label PackDescriptionLabel;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox PackIcon;
 		private System.Windows.Forms.GroupBox GeneralContainer;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label1;
