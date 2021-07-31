@@ -11,7 +11,6 @@ namespace MCDiagnostics.Forms
 			InitializeComponent();
 		}
 
-
 		// DONT EXECUTE THE PROGRAM, the variable of manifest are not set so it'll crash with Null exception
 
 		/* PackContainer
