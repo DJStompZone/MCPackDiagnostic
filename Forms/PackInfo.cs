@@ -45,6 +45,16 @@ namespace MCDiagnostics.Forms
 							}
 
 							// Fetch pack icon
+							ZipArchiveEntry pack_icon = GetFileEntryFromName(archive, "pack_icon.png");
+							if (pack_icon != null)
+							{
+								using (Stream packIconEntryStream= pack_icon.Open())
+								{
+    								PackIcon.Image = GetImageFromStream(packIconEntryStream);
+								}
+
+							}
+
 						}
 					}
 				}
@@ -70,10 +80,7 @@ namespace MCDiagnostics.Forms
 			return null;
 		}
 
-		private Image GetImageFromStream()
-		{
-			throw new NotImplementedException();
-		}
+		private Image GetImageFromStream(Stream stream) {	return Image.FromStream(stream);	}
 
 		private void LoadPackFromManifest(Manifest manifest)
 		{
